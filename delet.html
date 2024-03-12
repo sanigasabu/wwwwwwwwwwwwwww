@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> delet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #bfbfd9;
+            background-image: url(https://wallpaperset.com/w/full/6/e/9/432202.jpg);
+           background-repeat: no-repeat;
+           background-size: cover;
+           margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container {
+            background-color: rgb(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width:350px;
+            border:10px solid black;
+            margin:200px;
+
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+        .back-link {
+    text-decoration: none;
+    color:black;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.back-link:hover {
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>DELETE </h2>
+        <p>Are you sure you want to delete busstop {{ busstop.name }}?</p>
+    <form method="post" action="{% url 'delete_busstop' busstop.pk %}">
+        {% csrf_token %}
+
+        <input type="submit" value="Yes, delete">
+    </form>
+        <a href="{% url 'view_busstop' %}">Cancel</a>
+
+</div>
+</body>
+</html>
+
+
+
+
+
